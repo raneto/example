@@ -12,7 +12,7 @@ var path = require('path');
 //
 // Themes from NPM
 // use "dist" as the theme name for modules (for now)
-var theme_dir = path.join(__dirname, 'node_modules', '@raneto/theme-default');
+var theme_dir = path.join(__dirname, '..', 'node_modules', '@raneto/theme-default');
 var theme_name = 'dist';
 
 var config = {
@@ -41,7 +41,7 @@ var config = {
   support_email: '',
 
   // Footer Text / Copyright
-  copyright: 'Copyright &copy; ' + new Date().getFullYear() + ' - <a href="https://raneto.com">Powered by Raneto</a>',
+  copyright: 'Copyright &copy; ' + new Date().getFullYear() + ' - <a href="https://raneto.com">Powered by Raneto OVERRIDE</a>',
 
   // Excerpt length (used in search)
   excerpt_length: 400,
@@ -59,12 +59,12 @@ var config = {
   show_on_home_default: true,
 
   // Theme (see top of file)
-  theme_dir : theme_dir,
-  theme_name : theme_name,
+  theme_dir,
+  theme_name,
 
   // Specify the path of your content folder where all your '.md' files are located
   // Fix: Cannot be an absolute path
-  content_dir : path.join(__dirname, 'content', 'pages'),
+  content_dir : path.join(__dirname, '..', 'content', 'pages'),
 
   // Where is the public directory or document root?
   public_dir  : path.join(theme_dir, theme_name, 'public'),

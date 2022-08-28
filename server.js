@@ -13,7 +13,7 @@ var raneto = require('raneto');
 // Then, we load our configuration file
 // This can be done inline, with a JSON file,
 // or with a Node.js module as we do below.
-var config = require('./config.js');
+var config = require('./config/config.js');
 
 // Finally, we initialize Raneto
 // with our configuration object
