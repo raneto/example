@@ -1,8 +1,10 @@
-
-'use strict';
-
 // Modules
-var path = require('path');
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Which Theme to Use?
 //
@@ -12,13 +14,17 @@ var path = require('path');
 //
 // Themes from NPM
 // use "dist" as the theme name for modules (for now)
-var theme_dir = path.join(__dirname, '..', 'node_modules', '@raneto/theme-default');
-var theme_name = 'dist';
+var theme_dir = path.join(
+  __dirname,
+  "..",
+  "node_modules",
+  "@raneto/theme-default",
+);
+var theme_name = "dist";
 
 var config = {
-
   // Your site title (format: page_title - site_title)
-  site_title: 'Raneto Docs',
+  site_title: "Raneto Docs",
 
   // The base URL of your site (can use %base_url% in Markdown files)
   // This should be the full path to your Raneto installation:
@@ -26,7 +32,7 @@ var config = {
   //   example 2: https://www.mydomain.com/raneto
   // Do not include a trailing "/"
   // Leave this as an empty string to use the default
-  base_url: '',
+  base_url: "",
   nowrap: true,
 
   // Path Prefix
@@ -35,20 +41,20 @@ var config = {
   //
   // Example: if you are running Raneto at http://www.mydomain.com/raneto
   //          then you would enter '/raneto' below
-  path_prefix: '',
+  path_prefix: "",
 
   // Used for the "Get in touch" page footer link
-  support_email: '',
+  support_email: "",
 
   // Footer Text / Copyright
-  copyright: 'Copyright &copy; ' + new Date().getFullYear() + ' - <a href="https://raneto.com">Powered by Raneto OVERRIDE</a>',
+  copyright: `Copyright &copy; ${new Date().getFullYear()} Raneto Team`,
 
   // Excerpt length (used in search)
   excerpt_length: 400,
 
   // The meta value by which to sort pages (value should be an integer)
   // If this option is blank pages will be sorted alphabetically
-  page_sort_meta: 'sort',
+  page_sort_meta: "sort",
 
   // Should categories be sorted numerically (true) or alphabetically (false)
   // If true category folders need to contain a "sort" file with an integer value
@@ -64,24 +70,24 @@ var config = {
 
   // Specify the path of your content folder where all your '.md' files are located
   // Fix: Cannot be an absolute path
-  content_dir : path.join(__dirname, '..', 'content', 'pages'),
+  content_dir: path.join(__dirname, "..", "content", "pages"),
 
   // Where is the public directory or document root?
-  public_dir  : path.join(theme_dir, theme_name, 'public'),
+  public_dir: path.join(theme_dir, theme_name, "public"),
 
   // The base URL of your images folder,
   // Relative to config.public_dir
   // (can use %image_url% in Markdown files)
-  image_url: '/images',
+  image_url: "/images",
 
   // Add your analytics tracking code (including script tags)
-  analytics: '',
+  analytics: "",
 
   // Set to true to enable the web editor
-  allow_editing : true,
+  allow_editing: true,
 
   // Set to true to enable HTTP Basic Authentication
-  authentication : true,
+  authentication: true,
 
   // If editing is enabled, set this to true to only authenticate for editing, not for viewing
   authentication_for_edit: true,
@@ -93,16 +99,16 @@ var config = {
   googleoauth: false,
   google_group_restriction: {
     enabled: false,
-    api_key: 'GOOGLE_API_KEY',
-    group_name : 'GOOGLE_GROUP_NAME'
+    api_key: "GOOGLE_API_KEY",
+    group_name: "GOOGLE_GROUP_NAME",
   },
-  oauth2 : {
-    client_id: 'GOOGLE_CLIENT_ID',
-    client_secret: 'GOOGLE_CLIENT_SECRET',
-    callback: 'http://localhost:3000/auth/google/callback',
-    hostedDomain: 'google.com'
+  oauth2: {
+    client_id: "GOOGLE_CLIENT_ID",
+    client_secret: "GOOGLE_CLIENT_SECRET",
+    callback: "http://localhost:8080/auth/google/callback",
+    hostedDomain: "google.com",
   },
-  secret: 'someCoolSecretRightHere',
+  secret: "someCoolSecretRightHere",
 
   // ##### WARNING #####
   // You MUST change the username and password for security
@@ -112,30 +118,30 @@ var config = {
   // If you absolutely must use an online tool, here are some suggestions
   // https://bitwarden.com/password-generator/
   // https://www.grc.com/passwords.htm
-  credentials    : [
+  credentials: [
     {
-      username : 'admin',
-      password : 'password'
+      username: "admin",
+      password: "password",
     },
     {
-      username : 'admin2',
-      password : 'password'
-    }
+      username: "admin2",
+      password: "password",
+    },
   ],
 
-  locale: 'en',
+  locale: "en",
 
   // Support search with extra languages
-  searchExtraLanguages: ['ru'],
+  searchExtraLanguages: ["ru"],
 
   // Sets the format for datetime's
-  datetime_format: 'Do MMM YYYY',
+  datetime_format: "Do MMM YYYY",
 
   // Set to true to render suitable layout for RTL languages
   rtl_layout: false,
 
   // Edit Home Page title, description, etc.
-  home_meta : {
+  home_meta: {
     // title       : 'Custom Home Title',
     // description : 'Custom Home Description'
   },
@@ -162,8 +168,8 @@ var config = {
   },
 
   menu_on_pages: true,
-  menu_on_page_collapsible: true
+  menu_on_page_collapsible: true,
 };
 
 // Exports
-module.exports = config;
+export default config;
