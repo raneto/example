@@ -12,6 +12,6 @@
   "license": "MIT",
   "dependencies": {
     "@raneto/theme-default": "0.8.2",
-    "raneto": "0.18.0"
+    "raneto": "^0.18.1"
   }
 }
